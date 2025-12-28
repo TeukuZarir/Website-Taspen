@@ -1,6 +1,6 @@
 # HadirKerja
 
-Aplikasi absensi magang cerdas berbasis React.
+Aplikasi absensi magang berbasis React.
 
 ## Prasyarat
 - Node.js (versi 16 atau lebih baru)
