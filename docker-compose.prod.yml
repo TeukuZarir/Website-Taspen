@@ -1,0 +1,32 @@
+# ================================
+# HadirKerja Production Docker Compose
+# ================================
+# Usage: docker-compose -f docker-compose.prod.yml up --build -d
+
+version: '3.8'
+
+services:
+  # Frontend Production Server (nginx)
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hadirkerja-prod
+    ports:
+      - "80:80"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    # Resource limits untuk production
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 256M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
+
+networks:
+  default:
+    name: hadirkerja-prod-network

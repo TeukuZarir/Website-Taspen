@@ -1,0 +1,20 @@
+{
+  "short_name": "HadirKerja",
+  "name": "HadirKerja Attendance System",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/9131/9131529.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/9131/9131529.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#4f46e5",
+  "background_color": "#ffffff"
+}

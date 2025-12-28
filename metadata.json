@@ -1,0 +1,9 @@
+{
+  "name": "HadirKerja",
+  "description": "Smart Internship Attendance System with Role-based access.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}

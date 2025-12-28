@@ -1,0 +1,33 @@
+# ================================
+# HadirKerja Development Docker Compose
+# ================================
+# Usage: docker-compose up --build
+
+version: '3.8'
+
+services:
+  # Frontend Development Server
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: hadirkerja-dev
+    ports:
+      - "5173:5173"
+    volumes:
+      # Mount source code untuk hot reload
+      - .:/app
+      # Anonymous volume untuk node_modules (prevents overwrite)
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - VITE_SUPABASE_URL=${VITE_SUPABASE_URL}
+      - VITE_SUPABASE_ANON_KEY=${VITE_SUPABASE_ANON_KEY}
+    # Restart on failure
+    restart: unless-stopped
+    # Use polling for file changes (Windows/Mac compatibility)
+    command: npm run dev -- --host 0.0.0.0
+
+networks:
+  default:
+    name: hadirkerja-network
